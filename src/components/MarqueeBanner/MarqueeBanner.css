@@ -1,0 +1,49 @@
+.marquee-wrapper {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
+
+.marquee-track-js {
+  position: relative;
+  height: 24px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.marquee-item {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  white-space: nowrap;
+  will-change: transform;
+}
+
+/* Keep CSS animation as fallback */
+.marquee-track {
+  display: flex;
+  width: fit-content;
+  animation: scroll-infinite 30s linear infinite;
+  will-change: transform;
+}
+
+.marquee-content {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+@keyframes scroll-infinite {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
